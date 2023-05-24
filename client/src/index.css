@@ -50,8 +50,12 @@ body {
   justify-content: space-between;
 }
 
-.list-item,
 .tick {
+  padding: 10px;
+}
+
+.tick,
+path {
   fill: none;
   stroke: #000;
   stroke-miterlimit: 10;
