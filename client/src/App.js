@@ -1,5 +1,5 @@
 import ListHeader from "./components/ListHeader";
-import ListItem from "./components/list";
+import ListItem from "./components/ListItem";
 import { useEffect, useState } from "react";
 const App = () => {
   const userEmail = "agnescybil.atsuah@hyperisland.se";
