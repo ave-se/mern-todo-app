@@ -1,7 +1,8 @@
-import { useEffect } from "react/cjs/react.production.min";
 import ListHeader from "./components/ListHeader";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 const App = () => {
+  const userEmail = "agnescybil.atsuah@hyperisland.se";
+  const [tasks, setTasks] = useState(null);
   const getData = async () => {
     try {
       const response = await fetch(`http://localhost:8000/todos/${userEmail}`);
