@@ -9,6 +9,7 @@ const ListItem = ({ task }) => {
         <p className="task-title">{task.title}</p>
         <ProgressBar />
       </div>
+      <div className="button-container"></div>
     </div>
   );
 };
