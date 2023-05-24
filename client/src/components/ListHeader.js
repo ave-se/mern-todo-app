@@ -17,7 +17,7 @@ const ListHeader = ({ listName }) => {
           SIGN OUT
         </button>
       </div>
-      <Modal mode={"create"} setShowModal={setShowModal} />
+      {showModal && <Modal mode={"create"} setShowModal={setShowModal} />}
     </div>
   );
 };
