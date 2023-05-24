@@ -16,6 +16,7 @@ const App = () => {
 
   useEffect(() => getData, []);
 
+  console.log(tasks);
   return (
     <div className="app">
       <ListHeader listName={"🏝 Holiday tick list"} />
