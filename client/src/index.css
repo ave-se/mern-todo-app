@@ -157,3 +157,12 @@ body {
 .modal .form-title-container button:active {
   color: rgb(255, 50, 50);
 }
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal label {
+  font-size: 13px;
+}
