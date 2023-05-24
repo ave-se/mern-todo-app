@@ -1,4 +1,5 @@
 import ListHeader from "./components/ListHeader";
+import ListItem from "./components/list";
 import { useEffect, useState } from "react";
 const App = () => {
   const userEmail = "agnescybil.atsuah@hyperisland.se";
@@ -25,6 +26,9 @@ const App = () => {
   return (
     <div className="app">
       <ListHeader listName={"🏝 Holiday tick list"} />
+      {sortedTasks?.map((task) => (
+        <ListItem key={task.id} task={task} />
+      ))}
     </div>
   );
 };
