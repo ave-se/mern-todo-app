@@ -2,6 +2,7 @@ import { useState } from "react";
 
 const Modal = ({ mode, setShowModal, task }) => {
   const editMode = mode === "edit" ? true : false;
+  
   const [data, setData] = useState({
     user_email: editMode && task ? task.user_email : null,
     title: editMode && task ? task.title : null,
@@ -12,7 +13,7 @@ const Modal = ({ mode, setShowModal, task }) => {
 
 const postData() => {
   try {
-fetch()
+fetch("http://localhost:8000/todos")
   } catch(err) {
     console.error(err)
   }
