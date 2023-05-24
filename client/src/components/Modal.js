@@ -1,10 +1,11 @@
 import { useState } from "react";
 
-const Modal = ({ mode, setShowModal, task }) => {
+const Modal = ({ mode, setShowModal, getData, task }) => {
   const editMode = mode === "edit" ? true : false;
 
   const [data, setData] = useState({
-    user_email: editMode && task ? task.user_email : "bob@test.com",
+    user_email:
+      editMode && task ? task.user_email : "agnescybil.atsuah@hyperisland.se",
     title: editMode && task ? task.title : null,
     progress: editMode && task ? task.progress : 50,
     date: editMode ? "" : new Date(),
@@ -20,6 +21,8 @@ const Modal = ({ mode, setShowModal, task }) => {
       });
       if (response.status === 200) {
         console.log("WORKED");
+        setShowModal(false);
+        getData();
       }
     } catch (err) {
       console.error(err);
