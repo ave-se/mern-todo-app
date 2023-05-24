@@ -1,13 +1,22 @@
 import { useState } from "react";
 
-const Modal = ({ mode, setShowModal }) => {
+const Modal = ({ mode, setShowModal, task }) => {
   const editMode = mode === "edit" ? true : false;
   const [data, setData] = useState({
-    user_email: "",
-    title: "",
-    progress: "",
+    user_email: editMode && task ? task.user_email : null,
+    title: editMode && task ? task.title : null,
+    progress: editMode && task ? task.progress : 50,
     date: editMode ? "" : new Date(),
   });
+
+
+const postData () => {
+  try {
+fetch()
+  } catch(err) {
+    console.error(err)
+  }
+}
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -41,7 +50,8 @@ const Modal = ({ mode, setShowModal }) => {
             value={data.progress}
             onChange={handleChange}
           />
-          <input className={mode} type="submit" />
+       <input className={mode} type="submit" value={editMode ? "Update" : "Save"} />
+
         </form>
       </div>
     </div>
