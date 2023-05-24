@@ -1,6 +1,7 @@
 const PORT = process.env.PORT ?? 8000;
 const express = require("express");
 const app = express();
+const { v4: uuidv4 } = require("uuid");
 const cors = require("cors");
 const pool = require("./db");
 
@@ -18,6 +19,20 @@ app.get("/todos/:userEmail", async (req, res) => {
     res.json(todos.rows);
   } catch (err) {
     console.error(error);
+  }
+});
+
+// Create a new todo //
+app.post("/todos", (req, res) => {
+  const { user_email, title, progress, date } = req.body;
+  uuidv4();
+  try {
+    pool.query(
+      `INSERT INTO todos(id, user_email, title, progress, data)  VALUES($1, $2, $3, $4, $5)`,
+      [id, user_email, title, progress, date]
+    );
+  } catch (err) {
+    console.error(err);
   }
 });
 
