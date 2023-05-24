@@ -30,6 +30,21 @@ body {
   font-size: 10px;
 }
 
+.edit {
+  border: 1.5px solid rgb(141, 181, 145);
+  color: rgb(141, 181, 145);
+
+  text-transform: uppercase;
+}
+.edit:hover {
+  background-color: rgb(182, 223, 186);
+}
+
+.edit:active {
+  border: 1.5px solid rgb(141, 181, 145);
+  color: rgb(255, 255, 255);
+  background-color: rgb(141, 181, 145);
+}
 /* List Header */
 
 .list-header {
@@ -54,8 +69,7 @@ body {
   padding: 10px;
 }
 
-.tick,
-path {
+.tick path {
   fill: none;
   stroke: #000;
   stroke-miterlimit: 10;
