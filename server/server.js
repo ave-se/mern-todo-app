@@ -6,6 +6,7 @@ const cors = require("cors");
 const pool = require("./db");
 
 app.use(cors());
+app.use(express.json());
 
 // get all todos
 app.get("/todos/:userEmail", async (req, res) => {
@@ -29,7 +30,7 @@ app.post("/todos", (req, res) => {
   const id = uuidv4();
   try {
     pool.query(
-      `INSERT INTO todos(id, user_email, title, progress, data)  VALUES($1, $2, $3, $4, $5)`,
+      `INSERT INTO todos(id, user_email, title, progress, date)  VALUES($1, $2, $3, $4, $5)`,
       [id, user_email, title, progress, date]
     );
   } catch (err) {

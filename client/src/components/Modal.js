@@ -4,13 +4,14 @@ const Modal = ({ mode, setShowModal, task }) => {
   const editMode = mode === "edit" ? true : false;
 
   const [data, setData] = useState({
-    user_email: editMode && task ? task.user_email : null,
+    user_email: editMode && task ? task.user_email : "bob@test.com",
     title: editMode && task ? task.title : null,
     progress: editMode && task ? task.progress : 50,
     date: editMode ? "" : new Date(),
   });
 
-  const postData = async () => {
+  const postData = async (e) => {
+    e.preventDefault();
     try {
       const response = await fetch("http://localhost:8000/todos", {
         method: "POST",
@@ -45,7 +46,7 @@ const Modal = ({ mode, setShowModal, task }) => {
             onChange={handleChange}
           />
           <br />
-          <label for="range">Drag to select your current progress</label>
+          <label htmlFor="range">Drag to select your current progress</label>
           <input
             required
             type="range"
