@@ -9,7 +9,6 @@ const ListItem = ({ task }) => {
         <p className="task-title">{task.title}</p>
         <ProgressBar />
       </div>
-      <p>{task.title}</p>
     </div>
   );
 };
