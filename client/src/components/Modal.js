@@ -13,6 +13,7 @@ const Modal = () => {
   const handleChange = (e) => {
     console.log("changing", e);
     const { name, value } = e.target;
+    setData((data) => ({ ...data, [name]: value }));
   };
 
   return (
