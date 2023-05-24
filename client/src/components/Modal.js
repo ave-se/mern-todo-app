@@ -29,6 +29,15 @@ const Modal = ({ mode, setShowModal, getData, task }) => {
     }
   };
 
+  const editData = async (e) => {
+    e.preventDefault();
+    try {
+      await fetch(`http:localhost:8000/todos/${task.id}`);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setData((data) => ({ ...data, [name]: value }));
