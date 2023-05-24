@@ -1,3 +1,6 @@
+import TickIcon from "./TickIcon";
+import ProgressBar from "./ProgressBar";
+
 const ListItem = ({ task }) => {
   return (
     <div className="list-item">
