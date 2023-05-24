@@ -1,3 +1,4 @@
+import { useState } from "react";
 const Modal = () => {
   const mode = "edit";
   const handleChange = () => {
@@ -21,7 +22,7 @@ const Modal = () => {
             onChange={handleChange}
           />
           <br />
-
+          <label for="range">Drag to select your current progress</label>
           <input
             required
             type="range"
