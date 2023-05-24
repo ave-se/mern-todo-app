@@ -10,13 +10,13 @@ const Modal = ({ mode, setShowModal, task }) => {
   });
 
 
-const postData () => {
+const postData() => {
   try {
 fetch()
   } catch(err) {
     console.error(err)
   }
-}
+};
 
   const handleChange = (e) => {
     const { name, value } = e.target;
