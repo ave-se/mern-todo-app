@@ -13,7 +13,11 @@ const Modal = ({ mode, setShowModal, task }) => {
 
 const postData() => {
   try {
-fetch("http://localhost:8000/todos")
+fetch("http://localhost:8000/todos", {
+  method: "POST",
+  headers: {"Content-Type" : "application/json"},
+  body: JSON.stringify(data)
+})
   } catch(err) {
     console.error(err)
   }
